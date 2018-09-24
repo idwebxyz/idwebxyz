@@ -45,7 +45,7 @@
 	- Menu List Banners
 	- Menu List Style 1
 	- Menu Columns
-	- 
+	-
 25. Home Page 3
 26. One Page Remaining
     - full width
@@ -53,7 +53,7 @@
 	- horizental
 	- Animation background bg.
 	- Vertical Menu
-	- Contact 
+	- Contact
 27. Shop Pages
     - Carts Page
 	- My account Page
@@ -686,16 +686,16 @@ input:focus, textarea:focus {
 	background-image: url(../img/background/styles/bg_29.jpg)
 }
 .background30 {
-	background-image: url(../img/background/bg_9.jpg)
+	background-image: url(../images/sixsenses_resto_background.jpg)
 }
 .background31 {
-	background-image: url(../img/background/bg_4.jpg)
+	background-image: url(../images/sixsenses_resto_open.jpg)
 }
 .background32 {
 	background-image: url(../img/background/bg_11.jpg)
 }
 .background33 {
-	background-image: url(../img/background/bg_8.jpg)
+	background-image: url(../images/3.png)
 }
 .background34 {
 	background-image: url(../img/background/bg_17.jpg)
@@ -1581,11 +1581,9 @@ body.stretched #header.full-header #main-menu ul li.mega-menu .mega-menu-content
 	margin-left: auto;
 	margin-right: auto
 }
-
 .row.no-gutter {
 	margin-left: 0;
-	margin-right: 0;
-
+	margin-right: 0
 }
 .row.no-gutter [class*=col-]:not(:first-child), .row.no-gutter [class*=col-]:not(:last-child) {
 	padding-right: 0;
@@ -2031,7 +2029,7 @@ body.stretched #header.full-header #main-menu ul li.mega-menu .mega-menu-content
 	margin-left: -10px
 }
 .reserv_style2 textarea {
-	min-height: 260px
+	min-height: 110px
 }
 .date-block-dark .date-blocks .block-item {
 	border: 2px solid #c59d5f
@@ -2550,10 +2548,9 @@ span.welcome:after {
 .art-3 .center {
 	position: relative
 }
-/* diubah*/ 
 .art-3 .center .intro-text {
 	position: absolute;
-	top: 52%;
+	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%)
@@ -2646,9 +2643,7 @@ span.welcome:after {
 }
 .interest-in .overlay_content .overlay .icons, .menu_grid .overlay_content .overlay .icons, .menu_list .overlay_content .overlay .icons, .our-menu .overlay_content .overlay .icons {
 	top: 100%;
-	position: relative;
-	padding-bottom: 70px;
-	
+	position: relative
 }
 .interest-in .item, .menu_grid .item, .menu_list .item, .our-menu .item {
 	margin-bottom: 30px
@@ -5068,9 +5063,8 @@ color:#fff
 .padding-80 {
 	padding: 80px 0
 }
-/* dirubah baris our menu */
 .padding-100 {
-	padding: 50px 0
+	padding: 100px 0
 }
 .padding-150 {
 	padding: 150px 0

@@ -30,11 +30,11 @@ $(window).scroll(function(){
 
 $(function ($) {
 
-     
+
     //Detecting viewpot dimension
      var vH = $(window).height();
      var vW = $(window).width();
-     
+
 
 
      //Adjusting Intro Components Spacing based on detected screen resolution
@@ -48,10 +48,10 @@ $(function ($) {
     jQuery.fn.clickoutside = function(callback) {
     var outside = 1, self = $(this);
     self.cb = callback;
-    this.click(function() { 
-      outside = 0; 
+    this.click(function() {
+      outside = 0;
     });
-    $(document).click(function() { 
+    $(document).click(function() {
       outside && self.cb();
       outside = 1;
     });
@@ -76,7 +76,7 @@ $(function ($) {
       items : 6,
       itemsDesktop : [1199,3],
       itemsDesktopSmall : [979,3]
- 
+
   });
 
     /* Our team  */
@@ -88,8 +88,8 @@ $(function ($) {
       items : 3,
       itemsDesktop : [1199,3],
       itemsDesktopSmall : [979,2],
-     itemsTablet: [600,1] 
- 
+     itemsTablet: [600,1]
+
     });
 
       /* our clients */
@@ -101,8 +101,8 @@ $(function ($) {
       items : 4,
       itemsDesktop : [1199,4],
       itemsDesktopSmall : [979,3],
-     itemsTablet: [600,1] 
- 
+     itemsTablet: [600,1]
+
   });
 
   /* General carousel */
@@ -114,8 +114,8 @@ $(function ($) {
       items : 4,
       itemsDesktop : [1199,4],
       itemsDesktopSmall : [979,3],
-     itemsTablet: [600,1] 
- 
+     itemsTablet: [600,1]
+
   });
 
 
@@ -127,7 +127,7 @@ $(function ($) {
             pagination: false,
             singleItem: true
         });
-    
+
 
     /* Modernizer for overlay mobile */
     if (Modernizr.touch) {
@@ -203,15 +203,15 @@ $(function ($) {
   /* Forms validation */
 
     //if submit button is clicked
-    $('#submit').click(function () {       
-        
+    $('#submit').click(function () {
+
     //Get the data from all the fields
     var name = $('input[name=name]');
     var email = $('input[name=email]');
     var website = $('input[name=website]');
     var comment = $('textarea[name=comment]');
     var returnError = false;
-    
+
     //Simple validation to make sure user entered something
     //Add your own error checking here with JS, but also do some error checking with PHP.
     //If error found, add hightlight class to the text field
@@ -219,64 +219,64 @@ $(function ($) {
         name.addClass('error');
         returnError = true;
     } else name.removeClass('error');
-    
+
     if (email.val()=='') {
         email.addClass('error');
         returnError = true;
     } else email.removeClass('error');
-    
+
     if (comment.val()=='') {
         comment.addClass('error');
         returnError = true;
     } else comment.removeClass('error');
-    
+
     // Highlight all error fields, then quit.
     if(returnError == true){
-        return false;   
+        return false;
     }
-    
+
     //organize the data
-    var data = 'name=' + name.val() + '&email=' + email.val() + '&website=' + 
+    var data = 'name=' + name.val() + '&email=' + email.val() + '&website=' +
     website.val() + '&comment='  + encodeURIComponent(comment.val());
-    
+
     //disabled all the text fields
     $('.text').attr('disabled','true');
-    
+
     //show the loading sign
     $('.loading').show();
-    
+
     //start the ajax
     $.ajax({
         //this is the php file that processes the data and sends email
-        url: "process.php", 
-        
+        url: "process.php",
+
         //GET method is used
         type: "GET",
 
-        //pass the data         
-        data: data,     
-        
+        //pass the data
+        data: data,
+
         //Do not cache the page
         cache: false,
-        
+
         //success
-        success: function (html) {              
+        success: function (html) {
             //if process.php returned 1/true (send mail success)
-            if (html==1) {                  
+            if (html==1) {
                 //hide the form
-                $('.form').fadeOut('slow');                 
-                
+                $('.form').fadeOut('slow');
+
                 //show the success message
                 $('.done').fadeIn('slow');
-                
+
             //if process.php returned 0/false (send mail failed)
-            } else alert('Sorry, unexpected error. Please try again later.');               
-        }       
+            } else alert('Sorry, unexpected error. Please try again later.');
+        }
     });
-    
+
     //cancel the submit button default behaviours
     return false;
-    
+
     });
 
 
@@ -287,7 +287,7 @@ $(function ($) {
         effect:'fade'
 
     });
-  
+
   /* Youtube video */
   $("#youtube_video").YTPlayer();
 
@@ -315,7 +315,7 @@ $('#flickrbox').jflickrfeed({
             deeplinking: false
     });
 });
-    
+
 
 
 });
@@ -326,7 +326,7 @@ $(window).load(function() {
     $("#loader, #loader2, #loader3").delay(1300).fadeOut("slow");
 });
 
-    
+
 })();
 
 
@@ -477,7 +477,7 @@ var MAJESTY = MAJESTY || {};
             MAJESTY.header.topcart();
             MAJESTY.header.splitmenu();
             MAJESTY.header.removeStickyness();
-            
+
 
         },
 
@@ -604,7 +604,7 @@ var MAJESTY = MAJESTY || {};
                          wrapperClassName: 'sticky-header'
                      });
             }
-           
+
         },
 
         topcart: function(){
@@ -671,7 +671,7 @@ var MAJESTY = MAJESTY || {};
         direction: 'vertical',
         autoplay:5000,
         loop: true
-        });      
+        });
     },
     Swiper:function(){
             var swiperSlider = new Swiper('.swiper-parent',{
@@ -681,7 +681,7 @@ var MAJESTY = MAJESTY || {};
               autoplay:5000,
              effect:'slide',
              grabCursor: true,
-                             
+
                                 });
 
                                 $('#slider-arrow-left').on('click', function(e){
@@ -694,7 +694,7 @@ var MAJESTY = MAJESTY || {};
                                     swiperSlider.slideNext();
                                 });
 
-              
+
     },
        parallax: function(){
                if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
@@ -704,10 +704,10 @@ var MAJESTY = MAJESTY || {};
                     }
                     else {
                 $parallaxEl.addClass('mobile-parallax');
-               
+
             }
         },
-        animations: function(){   
+        animations: function(){
             if( MAJESTY.isMobile.any() ) {
         $('.animated').addClass('visible');
     }
@@ -771,7 +771,7 @@ var MAJESTY = MAJESTY || {};
                     adproof: true,
                     annotations: false
                  });
-                   
+
               } else{
                 $('#vimeo').addClass('poster-img');
               }
@@ -779,7 +779,7 @@ var MAJESTY = MAJESTY || {};
         carouselImage:function(){
                  var singImg = $("#single-img");
                   var thumbImg = $("#thumb-img");
-                 
+
                   singImg.owlCarousel({
                     singleItem : true,
                     slideSpeed : 1000,
@@ -788,7 +788,7 @@ var MAJESTY = MAJESTY || {};
                     afterAction : syncPosition,
                     responsiveRefreshRate : 200,
                   });
-                 
+
                   thumbImg.owlCarousel({
                     items : 4,
                     itemsDesktop      : [1199,4],
@@ -801,7 +801,7 @@ var MAJESTY = MAJESTY || {};
                       el.find(".owl-item").eq(0).addClass("current");
                     }
                   });
-                 
+
                   function syncPosition(el){
                     var current = this.currentItem;
                     $("#thumb-img")
@@ -813,13 +813,13 @@ var MAJESTY = MAJESTY || {};
                       center(current)
                     }
                   }
-                 
+
                   $("#thumb-img").on("click", ".owl-item", function(e){
                     e.preventDefault();
                     var number = $(this).data("owlItem");
                     singImg.trigger("owl.goTo",number);
                   });
-                 
+
                   function center(number){
                     var thumbImgvisible = thumbImg.data("owlCarousel").owl.visibleItems;
                     var num = number;
@@ -829,7 +829,7 @@ var MAJESTY = MAJESTY || {};
                         var found = true;
                       }
                     }
-                 
+
                     if(found===false){
                       if(num>thumbImgvisible[thumbImgvisible.length-1]){
                         thumbImg.trigger("owl.goTo", num - thumbImgvisible.length+2)
@@ -844,9 +844,9 @@ var MAJESTY = MAJESTY || {};
                     } else if(num === thumbImgvisible[0]){
                       thumbImg.trigger("owl.goTo", num-1)
                     }
-                    
+
                   }
-                 
+
         },
 
         youtubeBgVideo: function(){
@@ -883,8 +883,8 @@ var MAJESTY = MAJESTY || {};
 
                     if( MAJESTY.isMobile.any() ){
                             $(youTubeBg).addClass('video-mobile');
-                   
-                        }  
+
+                        }
 
                     element.mb_YTPlayer({
                         videoURL: ytbgVideo,
@@ -914,7 +914,7 @@ var MAJESTY = MAJESTY || {};
                 $( '#main-menu > ul, #main-menu > div > ul' ).toggleClass("show");
                 return false;
             });
-			
+
             $('#page-submenu-trigger').click(function() {
                 $body.toggleClass('top-search-open', false);
                 $pagemenu.toggleClass("pagemenu-active");
@@ -926,14 +926,14 @@ var MAJESTY = MAJESTY || {};
             });
             if( MAJESTY.isMobile.any() ){
                 $body.addClass('device-touch');
-                   
+
             }
-           
+
         },
 
-            // for resize and load function 
+            // for resize and load function
      forResizeAndLoad: function (){
-            
+
        // Decect Viewport Screen
          var vH = $(window).height();
         $('#home-header, .fullheight, #slider, .slider-parallax').css('height',vH);
@@ -941,8 +941,8 @@ var MAJESTY = MAJESTY || {};
         var parent_height = $('.slider-content').parent().height();
         var image_height = $('.slider-content').height();
 
-        var top_margin = (parent_height - image_height)/2; 
-        $('.slider-content').css( 'padding-top' , top_margin);       
+        var top_margin = (parent_height - image_height)/2;
+        $('.slider-content').css( 'padding-top' , top_margin);
     }
 
     };
@@ -994,7 +994,7 @@ var MAJESTY = MAJESTY || {};
     };
     MAJESTY.documentOnLoad = {
         init: function(){
-          MAJESTY.widget.parallax();            
+          MAJESTY.widget.parallax();
         }
 
     };
@@ -1023,7 +1023,7 @@ var MAJESTY = MAJESTY || {};
 
 
 jQuery(window).load(function(){
-   
+
     var $container = $('#menu-items');
         $container.isotope({ transitionDuration: '0.65s',
         itemSelector : '.menu-item, .menu-item-list',
@@ -1037,7 +1037,7 @@ jQuery(window).load(function(){
         $container.isotope({ filter: selector });
         return false;
     });
-    
+
      $(window).resize(function() {
       $container.isotope('layout');
     });
@@ -1046,8 +1046,8 @@ jQuery(window).load(function(){
 
 
 
-/* ==  
-    Googler Map   
+/* ==
+    Googler Map
 ==*/
 
 // Create and Initialise the Map (required) our google map below
@@ -1062,39 +1062,39 @@ jQuery(window).load(function(){
 
      // How zoomed in you want the map to start at (always required)
 
-            zoom: 17,
-            scrollwheel: false,
+            zoom: 18,
+            scrollwheel: true,
             // The latitude and longitude to center the map (always required)
 
-            center: new google.maps.LatLng(-7.8174877,110.3624712), // Your Address Here
+            center: new google.maps.LatLng(-7.817472, 110.362882), // Your Address Here
 
-            // How you would like to style the map. 
+            // How you would like to style the map.
             // This is where you would paste any style found on [Snazzy Maps][1].
             // copy the Styles from Snazzy maps,  and paste that style info after the word "styles:"
 
             styles: [{stylers:[{hue:'#000000'},{saturation:-100}]},{featureType:'water',elementType:'geometry',stylers:[{lightness:50},{visibility:'simplified'}]},{featureType:'road',elementType:'labels',stylers:[{visibility:'off'}]}]
         };
-    
+
         var mapElement = document.getElementById('map');
-        
+
           // Create the Google Map using out element and options defined above
            var map = new google.maps.Map(mapElement, mapOptions);
             // Define the image to use for the map marker (58 x 44 px)
-    
+
                 var image = 'img/map.png';
-    
+
         // Define the Lattitude and Longitude for the map location
-    
-                var myLatLng = new google.maps.LatLng(45.088530, -64.367951);
-    
+
+                var myLatLng = new google.maps.LatLng(-7.817472, 110.362882);
+
         // Define the map marker characteristics
-    
+
                 var mapMarker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
                 icon: image,
                 title:  'Frostbyte Interactive'
-    
+
                 });
 
            // Following Lines are needed if you use the Info Window to display content when map marker is clicked
@@ -1107,26 +1107,26 @@ jQuery(window).load(function(){
 
             google.maps.event.addListener(mapMarker, 'click', function() {
                 infowindow.open(map, mapMarker);
-    });  
+    });
 
     }
 
-   
+
 
    $(document).ready(function(){
          $(".bg").interactive_bg();
         });
-        
+
         $(window).resize(function() {
           $(".wrapper-bg > .ibg-bg").css({
             width: $(window).outerWidth(),
             height: $(window).outerHeight()
           })
         });
-        
 
 
-    // Fade slider   
+
+    // Fade slider
 $("#slider-fade, #slider-fullwidth").skippr({
             transition: 'fade',
             speed: 300,
@@ -1150,7 +1150,7 @@ $("#vertical-slider, #skipper-slider").skippr({
 
 //if submit button is clicked
     $('#reser-submit').click(function () {
-        
+
     //Get the data from all the fields
     var name = $('input[name=name]');
     var email = $('input[name=email]');
@@ -1162,47 +1162,47 @@ $("#vertical-slider, #skipper-slider").skippr({
     var occasion = $('select[name=occasion]');
     var food = $('select[name=food]');
     var returnError = false;
-		
-		
+
+
     //Simple validation to make sure user entered something
     //Add your own error checking here with JS, but also do some error checking with PHP.
     //If error found, add hightlight class to the text field
-		
+
     if (name.val()=='') {
         name.addClass('error');
         returnError = true;
     } else name.removeClass('error');
-    
+
     if (email.val()=='') {
         email.addClass('error');
         returnError = true;
     } else email.removeClass('error');
-    
+
     if (comment.val()=='') {
         comment.addClass('error');
         returnError = true;
     } else comment.removeClass('error');
-		
+
     if (date.val()=='') {
         date.addClass('error');
         returnError = true;
     } else date.removeClass('error');
-    
+
     if (phone.val()=='') {
         phone.addClass('error');
         returnError = true;
     } else phone.removeClass('error');
-    
+
     if (personnum.val()=='') {
         personnum.addClass('error');
         returnError = true;
     } else personnum.removeClass('error');
-		
+
     if (branch.val()=='') {
         branch.addClass('error');
         returnError = true;
     } else branch.removeClass('error');
-    
+
     if (occasion.get(0).selectedIndex === 0) {
         occasion.addClass('error');
         returnError = true;
@@ -1212,51 +1212,49 @@ $("#vertical-slider, #skipper-slider").skippr({
         food.addClass('error');
         returnError = true;
     } else food.removeClass('error');
-    
-    
+
+
     //organize the data
-    var data = 'name=' + name.val() + '&email=' + email.val() + '&date=' + 
+    var data = 'name=' + name.val() + '&email=' + email.val() + '&date=' +
     date.val() + '&phone=' + phone.val() + '&personnum=' + personnum.val() + '&branch=' + branch.val() + '&occasion=' + occasion.val() + '&food=' + food.val() + '&comment='  + encodeURIComponent(comment.val());
-    
+
     //disabled all the text fields
     $('.form-control1').attr('disabled','true');
-    
+
     //show the loading sign
     $('.loading').show();
-    
+
     //start the ajax
     $.ajax({
         //this is the php file that processes the data and sends email
-        url: "reser-process.php", 
-        
+        url: "reser-process.php",
+
         //GET method is used
         type: "GET",
 
-        //pass the data         
-        data: data,     
-        
+        //pass the data
+        data: data,
+
         //Do not cache the page
         cache: false,
-        
+
         //success
-        success: function (html) {              
+        success: function (html) {
             //if process.php returned 1/true (send mail success)
-            if (html==1) {                  
+            if (html==1) {
                 //hide the form
 
-                $('.reserv_form').fadeOut('slow');                 
-                
+                $('.reserv_form').fadeOut('slow');
+
                 //show the success message
                 $('.done').fadeIn('slow');
-                
+
             //if process.php returned 0/false (send mail failed)
             } else{$('.loading').hide();} ;
-        }       
+        }
     });
-    
+
     //cancel the submit button default behaviours
     return false;
-    
+
     });
-
-
